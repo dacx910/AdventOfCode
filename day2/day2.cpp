@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
 void printVec(std::vector<int> vec) {
     for (int data: vec) {

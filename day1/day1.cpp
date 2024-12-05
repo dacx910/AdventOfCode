@@ -20,8 +20,20 @@ void sort(std::vector<int>& nums) {
     }
 }
 
+int findNumofN(std::vector<int> nums, int N) {
+    int numN = 0;
+
+    for (int num : nums) {
+        if (num == N) {
+            ++numN;
+        }
+    }
+
+    return numN;
+}
+
 int main() {
-    std::ifstream fileInput("input.txt");
+    std::ifstream fileInput("day1.txt");
 
     std::vector<int> num1(1000);
     std::vector<int> num2(1000);
@@ -33,12 +45,14 @@ int main() {
         num2.at(i) = b;
     }
 
-    sort(num1);
-    sort(num2);
+    //sort(num1);
+    //sort(num2);
 
     int distance = 0;
     for (int i = 0; i < num1.size(); ++i) {
-        distance += abs(num1.at(i) - num2.at(i));
+        distance += num1.at(i)*findNumofN(num2, num1.at(i));
     }
     std::cout << distance << "\n";
+
+    return 0;
 }
