@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Mingw32 64-bit Build",
+            "type": "shell",
+            "command": "x86_64-pc-cygwin-g++.exe -Wall ${file} -o ${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
